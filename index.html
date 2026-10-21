@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Henrique Hallmann | Technical Leader & Senior Full Stack Engineer</title>
+  <meta name="description" content="Curriculum Vitae of Henrique Hallmann — Technical Leader & Senior Full Stack Software Developer with 14+ years building high-scalability web apps, distributed systems, and leading engineering teams." />
+  <meta name="author" content="Henrique Hallmann" />
+  <meta property="og:title" content="Henrique Hallmann | Technical Leader & Senior Full Stack Engineer" />
+  <meta property="og:description" content="14+ years experience in React, Node.js, TypeScript, Cloud & Microservices architecture." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --transition-speed: 0.25s;
+    }
+
+    /* Dark Theme (Default) */
+    html[data-theme="dark"] {
+      --bg-base: #0a0f1d;
+      --bg-surface: #111827;
+      --bg-card: #162032;
+      --bg-card-hover: #1c2942;
+      --bg-tag: rgba(56, 189, 248, 0.1);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-color-hover: rgba(56, 189, 248, 0.4);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-subtle: #64748b;
+      --primary: #38bdf8;
+      --primary-hover: #7dd3fc;
+      --accent: #818cf8;
+      --accent-glow: rgba(56, 189, 248, 0.18);
+      --tag-text: #38bdf8;
+      --tag-border: rgba(56, 189, 248, 0.25);
+      --nav-bg: rgba(10, 15, 29, 0.85);
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 16px -2px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 10px 30px -4px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Light Theme */
+    html[data-theme="light"] {
+      --bg-base: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-card: #ffffff;
+      --bg-card-hover: #f1f5f9;
+      --bg-tag: #f0f9ff;
+      --border-color: #e2e8f0;
+      --border-color-hover: #38bdf8;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-subtle: #64748b;
+      --primary: #0284c7;
+      --primary-hover: #0369a1;
+      --accent: #6366f1;
+      --accent-glow: rgba(2, 132, 199, 0.15);
+      --tag-text: #0369a1;
+      --tag-border: #bae6fd;
+      --nav-bg: rgba(255, 255, 255, 0.88);
+      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.07);
+      --shadow-md: 0 4px 14px -1px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+      transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Sticky Navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background: var(--nav-bg);
+      border-bottom: 1px solid var(--border-color);
+      transition: background var(--transition-speed), border-color var(--transition-speed);
+    }
+
+    .nav-container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-brand span.dot {
+      width: 9px;
+      height: 9px;
+      background: #10b981;
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.55rem 1.1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+      font-family: inherit;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #ffffff;
+      box-shadow: 0 2px 10px var(--accent-glow);
+    }
+
+    .btn-primary:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px var(--accent-glow);
+      color: #ffffff;
+    }
+
+    .btn-secondary {
+      background: var(--bg-surface);
+      color: var(--text-main);
+      border-color: var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-color-hover);
+      color: var(--primary);
+    }
+
+    .theme-toggle-btn {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .theme-toggle-btn:hover {
+      color: var(--primary);
+      border-color: var(--border-color-hover);
+    }
+
+    /* Container Layout */
+    .main-container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem 1.5rem;
+    }
+
+    /* Hero Section */
+    .hero-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+    }
+
+    .hero-top {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .badge-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      background: rgba(16, 185, 129, 0.12);
+      color: #10b981;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      width: fit-content;
+    }
+
+    .hero-name {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      background: linear-gradient(135deg, var(--text-main) 30%, var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--primary);
+      letter-spacing: -0.01em;
+    }
+
+    .hero-tagline {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 820px;
+      margin-top: 0.25rem;
+    }
+
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.5rem;
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.9rem;
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .contact-item svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      color: var(--primary);
+    }
+
+    .contact-item a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      color: var(--primary);
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 1.5rem;
+    }
+
+    /* Stats Banner */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .stat-value {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.1;
+      font-family: var(--font-mono);
+    }
+
+    .stat-label {
+      font-size: 0.825rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+
+    .stat-desc {
+      font-size: 0.82rem;
+      color: var(--text-subtle);
+    }
+
+    /* Section Headers */
+    .section {
+      margin-bottom: 2.75rem;
+    }
+
+    .section-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--text-main);
+    }
+
+    .section-title svg {
+      color: var(--primary);
+      width: 22px;
+      height: 22px;
+    }
+
+    /* Summary Card */
+    .summary-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+
+    /* Achievements Grid */
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+
+    .achievement-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.25rem;
+      position: relative;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .achievement-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--border-color-hover);
+    }
+
+    .achievement-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text-main);
+      margin-bottom: 0.4rem;
+    }
+
+    .achievement-icon {
+      color: var(--primary);
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    .achievement-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* Experience Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 10px;
+      bottom: 20px;
+      width: 2px;
+      background: var(--border-color);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -2rem;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--bg-base);
+      border: 3px solid var(--primary);
+      box-shadow: 0 0 0 4px var(--bg-surface);
+    }
+
+    .timeline-dot.current {
+      background: #10b981;
+      border-color: #10b981;
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.7);
+    }
+
+    .experience-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .experience-card:hover {
+      border-color: var(--border-color-hover);
+      box-shadow: var(--shadow-md);
+    }
+
+    .exp-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .exp-role {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .exp-company {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .exp-company a {
+      color: inherit;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .exp-company a:hover {
+      text-decoration: underline;
+    }
+
+    .exp-date {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-subtle);
+      background: var(--bg-base);
+      border: 1px solid var(--border-color);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    .exp-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 0.85rem;
+    }
+
+    .exp-bullets {
+      list-style-type: none;
+      padding: 0;
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .exp-bullets li {
+      position: relative;
+      padding-left: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .exp-bullets li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.75rem;
+    }
+
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      background: var(--bg-tag);
+      color: var(--tag-text);
+      border: 1px solid var(--tag-border);
+      font-weight: 500;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .skill-category {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+
+    .skill-cat-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .skill-cat-title svg {
+      width: 16px;
+      height: 16px;
+      color: var(--primary);
+    }
+
+    .skill-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .skill-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .skill-name {
+      font-weight: 500;
+    }
+
+    .skill-years {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-subtle);
+      background: var(--bg-base);
+      padding: 0.1rem 0.45rem;
+      border-radius: 4px;
+      border: 1px solid var(--border-color);
+    }
+
+    /* Education & Languages side by side */
+    .two-column {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .info-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .info-card h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.25rem;
+    }
+
+    .info-card .institution {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    .info-card .meta {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-subtle);
+      margin: 0.35rem 0 0.75rem 0;
+    }
+
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.9rem;
+    }
+
+    .lang-item:last-child {
+      border-bottom: none;
+    }
+
+    .lang-level {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      color: var(--text-subtle);
+      font-size: 0.85rem;
+      background: var(--bg-surface);
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* Toast for copied notifications */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #10b981;
+      color: #ffffff;
+      padding: 0.65rem 1.25rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      opacity: 0;
+      transform: translateY(15px);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 11pt;
+      }
+
+      .navbar, .hero-cta, .theme-toggle-btn, .toast, .stat-card, footer {
+        display: none !important;
+      }
+
+      .main-container {
+        padding: 0 !important;
+        max-width: 100% !important;
+      }
+
+      .hero-card, .experience-card, .achievement-card, .skill-category, .info-card, .summary-card {
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+        background: #fff !important;
+        color: #000 !important;
+        page-break-inside: avoid;
+        margin-bottom: 1rem !important;
+        padding: 1rem !important;
+      }
+
+      .timeline::before {
+        display: none;
+      }
+
+      .timeline {
+        padding-left: 0;
+      }
+
+      .timeline-dot {
+        display: none;
+      }
+
+      .hero-name {
+        -webkit-text-fill-color: #000 !important;
+        color: #000 !important;
+      }
+
+      .tag {
+        border: 1px solid #999 !important;
+        color: #000 !important;
+        background: transparent !important;
+      }
+
+      a {
+        color: #000 !important;
+        text-decoration: underline;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-card {
+        padding: 1.5rem;
+      }
+
+      .hero-name {
+        font-size: 1.85rem;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+      }
+
+      .hero-cta .btn {
+        width: 100%;
+      }
+
+      .timeline {
+        padding-left: 1.25rem;
+      }
+
+      .timeline::before {
+        left: 4px;
+      }
+
+      .timeline-dot {
+        left: -1.25rem;
+        width: 12px;
+        height: 12px;
+      }
+
+      .exp-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Sticky Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-brand">
+        <span class="dot"></span>
+        Henrique Hallmann
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle dark/light mode" title="Toggle theme">
+          <!-- Sun icon (shown in dark mode) -->
+          <svg id="sunIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Moon icon (hidden in dark mode) -->
+          <svg id="moonIcon" style="display:none;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <a href="CV Henrique Hallmann.pdf" download="CV Henrique Hallmann.pdf" class="btn btn-primary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Download PDF
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Wrapper -->
+  <main class="main-container">
+
+    <!-- Hero Card -->
+    <section class="hero-card">
+      <div class="hero-top">
+        <div class="badge-status">
+          <span style="width: 7px; height: 7px; background: #10b981; border-radius: 50%;"></span>
+          Available for Senior & Tech Lead Roles
+        </div>
+        <h1 class="hero-name">Henrique Hallmann</h1>
+        <div class="hero-title">Technical Leader & Senior Full Stack Software Engineer</div>
+        <p class="hero-tagline">
+          14+ years of engineering experience architecting high-scale distributed systems, leading engineering teams, and building high-performance web applications using React, TypeScript, Node.js, and Cloud native architectures.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          Porto Alegre, RS, Brazil (Remote Global)
+        </div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <a href="mailto:hvhallmann@gmail.com" id="emailLink">hvhallmann@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          <a href="https://github.com/hvhallmann" target="_blank" rel="noopener noreferrer">github.com/hvhallmann</a>
+        </div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          <a href="https://www.linkedin.com/in/henrique-hallmann/" target="_blank" rel="noopener noreferrer">linkedin.com/in/henrique-hallmann</a>
+        </div>
+      </div>
+
+      <div class="hero-cta">
+        <a href="CV Henrique Hallmann.pdf" download="CV Henrique Hallmann.pdf" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Download Official PDF
+        </a>
+        <button id="copyEmailBtn" class="btn btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          Copy Email Address
+        </button>
+        <button onclick="window.print()" class="btn btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+          Print / Save PDF
+        </button>
+      </div>
+    </section>
+
+    <!-- Highlights Banner -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value">14+</div>
+        <div class="stat-label">Years of Experience</div>
+        <div class="stat-desc">Full-stack & distributed systems</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">Lead</div>
+        <div class="stat-label">Engineering Leadership</div>
+        <div class="stat-desc">Mentored developers & drove architecture</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">Cloud</div>
+        <div class="stat-label">AWS & Azure</div>
+        <div class="stat-desc">Microservices, SSR & high concurrency</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">B.Sc.</div>
+        <div class="stat-label">Computer Science</div>
+        <div class="stat-desc">Universidade Federal do RS (UFRGS)</div>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <h2 class="section-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        Profile Summary
+      </h2>
+      <div class="summary-card">
+        Senior Full Stack Software Engineer and Technical Leader with fourteen years of hands-on experience spanning web application architectures, cloud native ecosystems, and team mentorship. A computer science graduate passionate about bridging technical rigor with business outcomes: splitting monoliths into high-throughput microservices, modernizing frontend architectures with React and TypeScript, and collaborating closely with executives and product founders across global remote teams.
+      </div>
+    </section>
+
+    <!-- Key Achievements -->
+    <section id="achievements" class="section">
+      <h2 class="section-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+        Key Achievements
+      </h2>
+      <div class="achievements-grid">
+        <div class="achievement-card">
+          <div class="achievement-header">
+            <svg class="achievement-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            High Performance Architecture
+          </div>
+          <p>Decomposed monolithic systems into resilient microservices utilizing modern message queues and brokers (RabbitMQ), drastically improving throughput and fault tolerance.</p>
+        </div>
+        <div class="achievement-card">
+          <div class="achievement-header">
+            <svg class="achievement-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            Technical Leadership & Mentoring
+          </div>
+          <p>Earned promotion to Tech Lead through proven delivery, guiding teams of developers, introducing architectural standards, code reviews, and establishing engineering best practices.</p>
+        </div>
+        <div class="achievement-card">
+          <div class="achievement-header">
+            <svg class="achievement-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            Enterprise RBAC & API Gateway
+          </div>
+          <p>Engineered platform-wide custom roles and permissions (RBAC) and tailored Azure API Management to serve as a secure single entry point for external developer integrations.</p>
+        </div>
+        <div class="achievement-card">
+          <div class="achievement-header">
+            <svg class="achievement-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M16 12l-4-4-4 4"></path><path d="M12 16V8"></path></svg>
+            Client Excellence & Startup Execution
+          </div>
+          <p>Served as primary technical contact for founders and executives, designing greenfield applications from the ground up (e.g. SmartSuite No-Code Work OS, Vessel).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Experience Timeline -->
+    <section id="experience" class="section">
+      <h2 class="section-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+        Work Experience
+      </h2>
+
+      <div class="timeline">
+
+        <!-- Atlas -->
+        <div class="timeline-item">
+          <div class="timeline-dot current"></div>
+          <div class="experience-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Software Developer / React</div>
+                <div class="exp-company">
+                  <a href="https://www.atlashxm.com/" target="_blank" rel="noopener noreferrer">
+                    Atlas (Atlas HXM)
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  </a>
+                </div>
+              </div>
+              <span class="exp-date">NOV 2022 – PRESENT</span>
+            </div>
+            <p class="exp-desc">
+              Global employer-of-record SaaS company supporting international expansion and compliant remote teams worldwide, powering thousands of global corporate clients.
+            </p>
+            <ul class="exp-bullets">
+              <li>Collaborated closely with business stakeholders to implement core platform features and deliver intuitive user experience on high-traffic product modules.</li>
+              <li>Engineered a flexible custom roles and permissions (RBAC) authorization system across the entire application ecosystem.</li>
+              <li>Implemented custom integration layers around Azure API Management, establishing a unified, secure gateway for third-party developer API access.</li>
+              <li>Led design and rollout of a unified company frontend style guide and component library, drastically increasing UI consistency and developer velocity.</li>
+              <li>Mentored developers on system architecture, performed rigorous code reviews, and championed frontend performance enhancements.</li>
+            </ul>
+            <div class="tech-tags">
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Azure Cloud</span>
+              <span class="tag">C#</span>
+              <span class="tag">Azure API Management</span>
+              <span class="tag">REST APIs</span>
+              <span class="tag">Sass / CSS Modules</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ae.studio -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="experience-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Software Developer / Node.js & Full Stack</div>
+                <div class="exp-company">
+                  <a href="https://ae.studio" target="_blank" rel="noopener noreferrer">
+                    ae.studio
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  </a>
+                </div>
+              </div>
+              <span class="exp-date">MAR 2020 – NOV 2022</span>
+            </div>
+            <p class="exp-desc">
+              Venture dev studio collaborating closely with startup founders and C-suite executives to engineer high-impact software solutions.
+            </p>
+            <ul class="exp-bullets">
+              <li><strong>Vessel (vesselhealth.com):</strong> Architected and maintained mission-critical backend services, ensuring continuous high availability, developing REST endpoints, and provisioning AWS cloud infrastructure.</li>
+              <li><strong>SmartSuite (smartsuite.com):</strong> Built a next-generation no-code Work OS platform from the ground up, architecting modular and highly scalable foundational features.</li>
+              <li>Built and optimized distributed backend services with Node.js, Python, and PostgreSQL running in Dockerized container environments.</li>
+            </ul>
+            <div class="tech-tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">React</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Docker</span>
+              <span class="tag">AWS</span>
+              <span class="tag">Python</span>
+              <span class="tag">REST APIs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Opentrack -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="experience-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Software Developer / Node.js</div>
+                <div class="exp-company">
+                  <a href="https://opentrack.co/" target="_blank" rel="noopener noreferrer">
+                    Opentrack
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  </a>
+                </div>
+              </div>
+              <span class="exp-date">OCT 2019 – MAR 2020</span>
+            </div>
+            <p class="exp-desc">
+              Global supply chain logistics platform specialized in container tracking and maritime shipment visibility.
+            </p>
+            <ul class="exp-bullets">
+              <li>Built real-time container tracking services and robust website scrapers for continuous marine logistics data acquisition.</li>
+              <li>Implemented high-efficiency Server-Side Rendering (SSR) applications with Express and React to enhance load speed and SEO.</li>
+              <li>Utilized AWS SNS for asynchronous event dispatching and notification delivery across decoupled services.</li>
+            </ul>
+            <div class="tech-tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">Express SSR</span>
+              <span class="tag">React</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Docker</span>
+              <span class="tag">AWS SNS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topazio Bank -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="experience-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Software Developer / Node.js</div>
+                <div class="exp-company">
+                  <a href="https://www.bancotopazio.com.br/" target="_blank" rel="noopener noreferrer">
+                    Topázio Bank
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  </a>
+                </div>
+              </div>
+              <span class="exp-date">FEB 2019 – OCT 2019</span>
+            </div>
+            <p class="exp-desc">
+              High-growth digital banking institution pioneering Bank as a Service (BaaS) infrastructure in Brazil.
+            </p>
+            <ul class="exp-bullets">
+              <li>Engineered high-throughput financial transaction workflows integrating dozens of external partners and clearing networks.</li>
+              <li>Utilized RabbitMQ message queues to guarantee transaction delivery and decouple financial service orchestrations.</li>
+              <li>Implemented security and audit logging compliance for sensitive financial customer data.</li>
+            </ul>
+            <div class="tech-tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">RabbitMQ</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Express</span>
+              <span class="tag">React</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- AGCO / e-core -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="experience-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Tech Leader / Node.js</div>
+                <div class="exp-company">
+                  <a href="https://www.fusesmartfarming.com/" target="_blank" rel="noopener noreferrer">
+                    AGCO / e-core (Fuse Smart Farming)
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  </a>
+                </div>
+              </div>
+              <span class="exp-date">MAR 2016 – MAR 2019</span>
+            </div>
+            <p class="exp-desc">
+              Global leader in agricultural machinery and IoT precision farming solutions.
+            </p>
+            <ul class="exp-bullets">
+              <li>Led a dedicated squad of 4 developers building next-generation IoT telemetry applications processing high-frequency data from hundreds of agricultural machines.</li>
+              <li>Designed scalable architectures capable of streaming and visualizing thousands of sensor data points daily on interactive dashboards.</li>
+              <li>Spearheaded transition from monolith to microservices using Docker, MongoDB, RabbitMQ, and Express/Hapi.js.</li>
+            </ul>
+            <div class="tech-tags">
+              <span class="tag">Tech Leadership</span>
+              <span class="tag">IoT Telemetry</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">React</span>
+              <span class="tag">Angular</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">Docker</span>
+              <span class="tag">RabbitMQ</span>
+              <span class="tag">AWS S3</span>
+              <span class="tag">Redux</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- TCS -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="experience-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Software Developer / JavaScript</div>
+                <div class="exp-company">
+                  <a href="https://www.swissre.com/corporate-solutions/" target="_blank" rel="noopener noreferrer">
+                    Tata Consultancy Services (TCS) — Bangalore, India
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  </a>
+                </div>
+              </div>
+              <span class="exp-date">JAN 2015 – DEC 2015</span>
+            </div>
+            <p class="exp-desc">
+              Worked on-site in Bangalore, India for primary enterprise client Swiss Re (global reinsurance leader).
+            </p>
+            <ul class="exp-bullets">
+              <li>Identified critical optimization opportunities to modernize legacy enterprise insurance web applications for modern browsers.</li>
+              <li>Developed feature enhancements, resolved complex browser compatibility issues, and facilitated cross-cultural engineering alignment.</li>
+            </ul>
+            <div class="tech-tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">Enterprise Architecture</span>
+              <span class="tag">Performance Tuning</span>
+              <span class="tag">HTML5 / CSS3</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- HP -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="experience-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Software Developer / Java</div>
+                <div class="exp-company">
+                  Hewlett-Packard (HP) — Brazil
+                </div>
+              </div>
+              <span class="exp-date">MAR 2012 – DEC 2014</span>
+            </div>
+            <p class="exp-desc">
+              Core contributor to HP Capacity Advisor, an enterprise data center optimization and infrastructure planning solution.
+            </p>
+            <ul class="exp-bullets">
+              <li>Engineered high-performance enterprise data center analysis features in Java.</li>
+              <li>Resolved critical defects, optimized algorithms, and guaranteed long-term platform stability for Fortune 500 data centers.</li>
+            </ul>
+            <div class="tech-tags">
+              <span class="tag">Java</span>
+              <span class="tag">Data Center Optimization</span>
+              <span class="tag">Enterprise Systems</span>
+              <span class="tag">SQL</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Skills Matrix -->
+    <section id="skills" class="section">
+      <h2 class="section-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+        Technical Skills & Knowledge
+      </h2>
+      <div class="skills-grid">
+
+        <div class="skill-category">
+          <div class="skill-cat-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            Languages & Runtimes
+          </div>
+          <div class="skill-list">
+            <div class="skill-item"><span class="skill-name">JavaScript (ES6+)</span><span class="skill-years">10 yrs</span></div>
+            <div class="skill-item"><span class="skill-name">Node.js</span><span class="skill-years">7 yrs</span></div>
+            <div class="skill-item"><span class="skill-name">TypeScript</span><span class="skill-years">Senior</span></div>
+            <div class="skill-item"><span class="skill-name">Python</span><span class="skill-years">2 yrs</span></div>
+            <div class="skill-item"><span class="skill-name">Java</span><span class="skill-years">4 yrs</span></div>
+            <div class="skill-item"><span class="skill-name">C#</span><span class="skill-years">2 yrs</span></div>
+            <div class="skill-item"><span class="skill-name">SQL (MSSQL, PostgreSQL, Oracle)</span><span class="skill-years">7 yrs</span></div>
+            <div class="skill-item"><span class="skill-name">NoSQL (MongoDB)</span><span class="skill-years">4 yrs</span></div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+            Frontend & Libraries
+          </div>
+          <div class="skill-list">
+            <div class="skill-item"><span class="skill-name">React</span><span class="skill-years">6 yrs</span></div>
+            <div class="skill-item"><span class="skill-name">Redux / State Management</span><span class="skill-years">7 yrs</span></div>
+            <div class="skill-item"><span class="skill-name">Next.js / SSR</span><span class="skill-years">2 yrs</span></div>
+            <div class="skill-item"><span class="skill-name">React Native</span><span class="skill-years">1 yr</span></div>
+            <div class="skill-item"><span class="skill-name">Angular</span><span class="skill-years">3 yrs</span></div>
+            <div class="skill-item"><span class="skill-name">Design Systems & Sass</span><span class="skill-years">6 yrs</span></div>
+            <div class="skill-item"><span class="skill-name">Webpack / Vite / Babel</span><span class="skill-years">5 yrs</span></div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+            Cloud, DevOps & Backend
+          </div>
+          <div class="skill-list">
+            <div class="skill-item"><span class="skill-name">Express.js & Hapi.js</span><span class="skill-years">5 yrs</span></div>
+            <div class="skill-item"><span class="skill-name">Docker & Containers</span><span class="skill-years">5 yrs</span></div>
+            <div class="skill-item"><span class="skill-name">Azure Cloud & APIM</span><span class="skill-years">3 yrs</span></div>
+            <div class="skill-item"><span class="skill-name">AWS (S3, SNS)</span><span class="skill-years">3 yrs</span></div>
+            <div class="skill-item"><span class="skill-name">RabbitMQ & Message Queues</span><span class="skill-years">2 yrs</span></div>
+            <div class="skill-item"><span class="skill-name">ElasticSearch</span><span class="skill-years">2 yrs</span></div>
+            <div class="skill-item"><span class="skill-name">Microservices Architecture</span><span class="skill-years">Senior</span></div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            Testing & Methodologies
+          </div>
+          <div class="skill-list">
+            <div class="skill-item"><span class="skill-name">Jest & Mocha</span><span class="skill-years">5 yrs</span></div>
+            <div class="skill-item"><span class="skill-name">React Testing Library</span><span class="skill-years">4 yrs</span></div>
+            <div class="skill-item"><span class="skill-name">Agile / Scrum & Kanban</span><span class="skill-years">6 yrs</span></div>
+            <div class="skill-item"><span class="skill-name">Git & GitHub Actions</span><span class="skill-years">Senior</span></div>
+            <div class="skill-item"><span class="skill-name">Code Reviews & Mentorship</span><span class="skill-years">Senior</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Education & Languages -->
+    <section id="education" class="section">
+      <div class="two-column">
+
+        <div class="info-card">
+          <h3 class="section-title" style="font-size: 1.25rem; margin-bottom: 1rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+            Education
+          </h3>
+          <h4>Bachelor's Degree in Computer Science</h4>
+          <div class="institution">Universidade Federal do Rio Grande do Sul (UFRGS)</div>
+          <div class="meta">JAN 2004 – DEC 2012 • Porto Alegre, Brazil</div>
+          <p style="font-size: 0.88rem; color: var(--text-muted);">
+            One of the most prestigious computer science programs in Latin America, focusing on distributed computing, algorithms, compilers, and software engineering foundations.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3 class="section-title" style="font-size: 1.25rem; margin-bottom: 1rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            Languages & Curations
+          </h3>
+          <div class="lang-item">
+            <div><strong>Portuguese</strong> <span style="color:var(--text-subtle);">(Native)</span></div>
+            <div class="lang-level">Native Proficiency</div>
+          </div>
+          <div class="lang-item">
+            <div><strong>English</strong> <span style="color:var(--text-subtle);">(International Work)</span></div>
+            <div class="lang-level">Fluent / Professional</div>
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.4rem;">Industry Curations Followed:</div>
+            <div class="tech-tags">
+              <span class="tag">JavaScript Weekly</span>
+              <span class="tag">Node Weekly</span>
+              <span class="tag">React Status</span>
+              <span class="tag">Hacker News</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div style="max-width: 1040px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.75rem; align-items: center;">
+      <div>
+        <strong>Henrique Hallmann</strong> — Technical Leader & Senior Full Stack Software Engineer
+      </div>
+      <div>
+        <a href="CV Henrique Hallmann.pdf" download="CV Henrique Hallmann.pdf">Download PDF Resume</a> •
+        <a href="https://github.com/hvhallmann" target="_blank" rel="noopener noreferrer">GitHub</a> •
+        <a href="https://www.linkedin.com/in/henrique-hallmann/" target="_blank" rel="noopener noreferrer">LinkedIn</a> •
+        <a href="mailto:hvhallmann@gmail.com">hvhallmann@gmail.com</a>
+      </div>
+      <div style="font-size: 0.78rem; margin-top: 0.5rem;">
+        Hosted with GitHub Pages • Crafted with modern semantic HTML & CSS
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Toast Notification -->
+  <div id="toast" class="toast">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span>Email copied to clipboard!</span>
+  </div>
+
+  <script>
+    // Theme Switcher Logic
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const sunIcon = document.getElementById('sunIcon');
+    const moonIcon = document.getElementById('moonIcon');
+    const htmlEl = document.documentElement;
+
+    function applyTheme(theme) {
+      htmlEl.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      if (theme === 'dark') {
+        sunIcon.style.display = 'block';
+        moonIcon.style.display = 'none';
+      } else {
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'block';
+      }
+    }
+
+    // Auto-detect preference or retrieve saved
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      applyTheme(savedTheme);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      applyTheme('light');
+    } else {
+      applyTheme('dark');
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = htmlEl.getAttribute('data-theme');
+      applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    });
+
+    // Copy Email to Clipboard
+    const copyEmailBtn = document.getElementById('copyEmailBtn');
+    const toast = document.getElementById('toast');
+
+    function showToast(message) {
+      if (message) toast.querySelector('span').textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2500);
+    }
+
+    if (copyEmailBtn) {
+      copyEmailBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText('hvhallmann@gmail.com');
+          showToast('Email (hvhallmann@gmail.com) copied!');
+        } catch (err) {
+          showToast('Email: hvhallmann@gmail.com');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
